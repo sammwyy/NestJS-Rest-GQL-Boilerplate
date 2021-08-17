@@ -7,8 +7,8 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 
-// import { join } from 'path';
-// import { GraphQLModule } from '@nestjs/graphql';
+import { join } from 'path';
+import { GraphQLModule } from '@nestjs/graphql';
 
 @Module({
   imports: [
@@ -35,13 +35,12 @@ import { MongooseModule } from '@nestjs/mongoose';
      * is running under a development environment.
      */
 
-    /*
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src', 'graphql', 'schema.gql'),
       sortSchema: true,
       debug: process.env.NODE_ENV == 'development',
     }),
-    */
+
     AccountModule,
     ProfileModule,
   ],
