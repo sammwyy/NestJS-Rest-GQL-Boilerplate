@@ -1,3 +1,5 @@
+import { AccountModule } from './modules/account/account.module';
+import { ProfileModule } from './modules/profile/profile.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -40,6 +42,8 @@ import { MongooseModule } from '@nestjs/mongoose';
       debug: process.env.NODE_ENV == 'development',
     }),
     */
+    AccountModule,
+    ProfileModule,
   ],
   controllers: [AppController],
   providers: [AppService],
