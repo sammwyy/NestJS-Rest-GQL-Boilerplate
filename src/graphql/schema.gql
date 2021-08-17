@@ -9,6 +9,11 @@ type Account {
   profile: Profile!
 }
 
+input AuthLoginDto {
+  email: String!
+  password: String!
+}
+
 input CreateAccountDto {
   email: String!
   password: String!
@@ -20,9 +25,15 @@ input CreateProfileDto {
   username: String!
 }
 
+type ISession {
+  accessToken: String!
+  account: Account!
+}
+
 type Mutation {
   createAccount(payload: CreateAccountDto!): Account!
   createProfile(payload: CreateProfileDto!): Profile!
+  login(payload: AuthLoginDto!): ISession!
 }
 
 type Profile {

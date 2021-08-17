@@ -1,3 +1,4 @@
+import { AuthModule } from './modules/auth/auth.module';
 import { AccountModule } from './modules/account/account.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { Module } from '@nestjs/common';
@@ -42,6 +43,7 @@ import { GraphQLModule } from '@nestjs/graphql';
     }),
 
     AccountModule,
+    AuthModule,
     ProfileModule,
   ],
   controllers: [AppController],
