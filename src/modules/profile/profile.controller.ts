@@ -34,8 +34,8 @@ export class ProfileController {
       return profile;
     } else {
       throw new NotFoundException(
-        'User with this ID or username not found.',
-        'USER_NOT_FOUND',
+        'Profile with this ID or username not found.',
+        'PROFILE_NOT_FOUND',
       );
     }
   }
