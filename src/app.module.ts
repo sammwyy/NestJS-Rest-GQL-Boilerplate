@@ -5,6 +5,9 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 
+// import { join } from 'path';
+// import { GraphQLModule } from '@nestjs/graphql';
+
 @Module({
   imports: [
     /**
@@ -22,6 +25,21 @@ import { MongooseModule } from '@nestjs/mongoose';
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }),
+
+    /**
+     * Using the GraphQL module it will load all the schemas automatically
+     * and generate the .gql file
+     * Also the playground mode and debug will only be available if the application
+     * is running under a development environment.
+     */
+
+    /*
+    GraphQLModule.forRoot({
+      autoSchemaFile: join(process.cwd(), 'src', 'graphql', 'schema.gql'),
+      sortSchema: true,
+      debug: process.env.NODE_ENV == 'development',
+    }),
+    */
   ],
   controllers: [AppController],
   providers: [AppService],
