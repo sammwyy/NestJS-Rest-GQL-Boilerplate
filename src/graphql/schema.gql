@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Account {
+  _id: ID!
+  email: String!
+  emailVerified: Boolean!
+  profile: Profile!
+}
+
+input CreateAccountDto {
+  email: String!
+  password: String!
+}
+
+input CreateProfileDto {
+  bio: String!
+  displayName: String!
+  username: String!
+}
+
+type Mutation {
+  createAccount(payload: CreateAccountDto!): Account!
+  createProfile(payload: CreateProfileDto!): Profile!
+}
+
+type Profile {
+  _id: ID!
+  bio: String
+  displayName: String!
+  username: String!
+}
+
+type Query {
+  getProfileByUsername(username: String!): Profile!
+}

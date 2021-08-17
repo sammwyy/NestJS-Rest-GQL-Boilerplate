@@ -1,3 +1,4 @@
+import { AccountResolver } from './account.resolver';
 import { AccountController } from './account.controller';
 import { AccountService } from './account.service';
 import { Account, AccountSchema } from './schemas/account.schema';
@@ -13,7 +14,7 @@ import { Module } from '@nestjs/common';
       },
     ]),
   ],
-  providers: [AccountService],
+  providers: [AccountResolver, AccountService],
   controllers: [AccountController],
   exports: [AccountService],
 })

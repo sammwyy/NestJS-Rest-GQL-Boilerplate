@@ -1,3 +1,4 @@
+import { ProfileResolver } from './profile.resolver';
 import { ProfileController } from './profile.controller';
 import { ProfileService } from './profile.service';
 import { Profile, ProfileSchema } from './schemas/profile.schema';
@@ -13,7 +14,7 @@ import { Module } from '@nestjs/common';
       },
     ]),
   ],
-  providers: [ProfileService],
+  providers: [ProfileResolver, ProfileService],
   controllers: [ProfileController],
   exports: [ProfileService],
 })
